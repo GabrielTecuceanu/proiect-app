@@ -1,0 +1,18 @@
+rm -rf build
+cc -O3 -march=native -std=gnu99 -Wall -Wextra -Iinclude -DKNN_IMPL='"serial"' src/main.c src/common.c src/knn_serial.c -o build/knn_serial -lm
+cc -O3 -march=native -std=gnu99 -Wall -Wextra -fopenmp -Iinclude -DKNN_IMPL='"omp"' src/main.c src/common.c src/knn_omp.c -o build/knn_omp -lm
+host=haswell-wn29.grid.pub.ro cpus=16
+validare: k=1 accuracy=0.9665
+validare: k=3 accuracy=0.9650
+validare: k=5 accuracy=0.9600
+validare: k=7 accuracy=0.9595
+k ales (val): 1
+accuracy: 0.9590   macro-F1: 0.9590
+
+impl         search_s   speedup  efficiency metrici
+serial         43.092      1.00           - ref
+omp-1          42.770      1.01        1.01 identice
+omp-2          21.699      1.99        0.99 identice
+omp-4          11.650      3.70        0.92 identice
+omp-8           6.310      6.83        0.85 identice
+omp-16          3.526     12.22        0.76 identice

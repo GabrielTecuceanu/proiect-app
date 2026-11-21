@@ -1,0 +1,12 @@
+pwd=/export/home/acs/stud/g/gabriel.tecuceanu/proiect-app
+Makefile
+build
+data
+include
+logs
+scripts
+src
+make: Nothing to be done for 'serial'.
+host=haswell-wn29.grid.pub.ro cpus=1 start=12:26:24
+[2026-11-21T12:26:24.208] error: execve(): /export/home/acs/stud/g/gabriel.tecuceanu/proiect-app/./build/knn_serial: Exec format error
+srun: error: haswell-wn29: task 0: Exited with exit code 8

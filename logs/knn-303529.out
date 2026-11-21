@@ -1,0 +1,11 @@
+pwd=/export/home/acs/stud/g/gabriel.tecuceanu/proiect-app
+Makefile
+data
+include
+logs
+scripts
+src
+rm -rf build
+g++ -O3 -march=native -std=c++17 -Wall -Wextra -Iinclude -DKNN_IMPL='"serial"' src/main.cpp src/knn_serial.cpp -o build/knn_serial
+make: g++: No such file or directory
+make: *** [Makefile:13: build/knn_serial] Error 127
